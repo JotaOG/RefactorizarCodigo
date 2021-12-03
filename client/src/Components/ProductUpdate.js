@@ -21,9 +21,10 @@ export const ProductUpdate = (props) => {
     console.log(product);
     axios
       .put("http://localhost:8000/api/product/" + id, product)
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res)
+        navigate("/");})
       .catch((err) => console.log(err));
-      navigate("/");
   };
 
   return (
